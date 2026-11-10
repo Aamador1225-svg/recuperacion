@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hojas de Trabajo - Recuperación de Geometría 8.º - 2026</title>
+<style>
+:root{
+ --ink:#172033;--muted:#526174;--line:#bac7d3;--soft:#f3f7fa;--accent:#075985;
+ --accent2:#0e7490;--pale:#eaf4f9;--answer:#fbfcfd;--grid:#e5ebf0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:#e9eef3}
+body{font-size:9.35pt;line-height:1.25}
+.toolbar{max-width:210mm;margin:10px auto;padding:12px 16px;background:#172033;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.toolbar h1{font-size:14pt;margin:0 0 3px}.toolbar p{font-size:8.8pt;color:#d8e2ec;margin:0}
+.toolbar button{border:0;border-radius:5px;padding:9px 14px;font-weight:700;color:#fff;background:#087ca8;cursor:pointer}
+.page{width:210mm;height:297mm;margin:9mm auto;padding:11mm 12mm 9mm;background:#fff;box-shadow:0 3px 16px #00000018;overflow:hidden;display:flex;flex-direction:column;page-break-after:always;break-after:page}
+.page:last-of-type{page-break-after:auto;break-after:auto}
+.page-head{border-bottom:2px solid var(--ink);padding-bottom:5px;margin-bottom:7px}
+.school-title{margin:0;text-align:center;text-transform:uppercase;letter-spacing:.3px;font-size:14.2pt;font-weight:800}
+.identity{display:grid;grid-template-columns:1fr auto auto;gap:9px;align-items:end;margin-top:7px;font-size:8.6pt;font-weight:700}
+.write-line{display:inline-block;min-width:55mm;height:13px;border-bottom:1px solid #64748b;vertical-align:bottom}
+.page-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:1px 0 4px}
+.page-title{margin:0;font-size:12.5pt;color:var(--accent);font-weight:800}
+.part-tag{white-space:nowrap;border:1px solid #b8cfdd;background:#f0f7fb;border-radius:10px;padding:3px 7px;font-size:7.5pt;font-weight:700;color:#075985}
+.purpose{font-size:8.5pt;margin:0 0 6px;color:#334155}
+.concepts{background:var(--pale);border-left:4px solid var(--accent2);padding:6px 8px;margin:0 0 7px;border-radius:0 4px 4px 0}
+.concepts h3{margin:0 0 3px;font-size:8.5pt;color:#0c4a6e}
+.concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px}
+.concept-grid p{margin:0;font-size:7.85pt}
+.concepts.compact{padding:5px 7px}
+.activity{margin:0 0 7px}
+.activity-head{display:flex;align-items:baseline;gap:6px;border-bottom:1px solid #d8e1e9;padding-bottom:2px;margin:0 0 4px}
+.activity-head h3{font-size:9.5pt;margin:0;font-weight:800}
+.minutes{margin-left:auto;font-size:7.4pt;color:var(--muted);font-weight:700;white-space:nowrap}
+p{margin:3px 0}.small{font-size:8.3pt}.tiny{font-size:7.5pt}.micro{font-size:7pt}
+ol,ul{margin:3px 0 3px 16px;padding:0}li{margin:2px 0}
+.two-col{display:grid;grid-template-columns:36% 1fr;gap:9px;align-items:center}
+.two-col.wide{grid-template-columns:40% 1fr}
+.figure-slot{border:1.4px dashed #8da1b3;border-radius:5px;background:#fbfdff;height:34mm;min-height:34mm;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#536579;overflow:hidden}
+.figure-slot .figure-name{font-size:9pt;font-weight:800;color:#075985;margin-bottom:3px}
+.figure-slot.tall{height:43mm;min-height:43mm}.figure-slot.medium{height:36mm;min-height:36mm}.figure-slot.short{height:25mm;min-height:25mm}.figure-slot.large{height:59mm;min-height:59mm}
+.figure-slot.svg-slot{height:64mm;min-height:64mm;padding:5px}
+.figure-slot.svg-slot img{display:block;width:100%;height:100%;max-height:100%;object-fit:contain}
+.figure-slot.svg-slot a{display:block;width:100%;height:100%;min-height:0}
+.figure-slot.svg-pythagoras{padding:5px}
+.figure-slot.svg-pythagoras img{display:block;flex:1 1 auto;min-width:0;min-height:0;width:100%;height:100%;object-fit:contain}
+.ggb-square{align-self:center;max-width:100%;max-height:100%;}
+
+.answer-line{display:inline-block;vertical-align:bottom;min-width:30mm;height:13px;border-bottom:1px solid #64748b}
+.answer-line.short{min-width:30mm}.answer-line.medium{min-width:45mm}.answer-line.long{min-width:60mm}
+.answer-box{border:1px solid var(--line);border-radius:4px;background-color:var(--answer);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 7mm,var(--grid) 7.1mm,var(--grid) 7.35mm);padding:5px 7px}
+.answer-box .box-label{font-size:7.8pt;font-weight:700;color:#334155;margin:0 0 3px;background:#fbfcfd;display:inline-block;padding-right:4px}
+.answer-box.short{min-height:16mm}.answer-box.medium{min-height:25mm}.answer-box.tall{min-height:37mm}.answer-box.large{min-height:53mm}
+.construction-area{border:1px solid #9aa9b8;border-radius:4px;height:48mm;background:repeating-linear-gradient(to bottom,#fff 0,#fff 9mm,#e9eef2 9.1mm,#e9eef2 9.3mm);position:relative}
+.construction-area.large{height:68mm}.construction-area.medium{height:55mm}.construction-area.small{height:34mm}
+.prompt{background:#f7fafc;border:1px solid #d7e1e9;border-radius:4px;padding:5px 7px;margin:4px 0}
+.response-table{border-collapse:collapse;width:100%;font-size:7.75pt;margin:4px 0}
+.response-table th,.response-table td{border:1px solid #aebdca;padding:4px 5px;vertical-align:middle}
+.response-table th{background:#edf3f7;text-align:center;font-weight:800}
+.property-table{border-collapse:collapse;width:100%;font-size:7.3pt;margin:4px 0}
+.property-table th,.property-table td{border:1px solid #aebdca;padding:4px 3px;text-align:center}
+.property-table th{background:#edf3f7;font-weight:800}
+.property-table td:first-child{text-align:left;width:38%}
+.formula-card{border:1px solid #cbdbe5;background:#f5f9fc;border-radius:4px;padding:6px 8px;margin:0 0 7px}
+.formula-card h3{font-size:8.5pt;margin:0 0 3px;color:#0c4a6e}
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px 12px}
+.formula-grid p{font-size:7.8pt;margin:1px 0}
+.answer-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini-card{border:1px solid var(--line);border-radius:4px;padding:5px 6px;background:#fff}
+.mini-card h4{font-size:8pt;margin:0 0 3px;color:#0c4a6e}
+.note{font-size:7.3pt;color:#475569}
+.footer{margin-top:auto;border-top:1px solid #cbd5e1;padding-top:4px;display:flex;justify-content:space-between;gap:8px;color:#64748b;font-size:7.1pt}
+.no-break{break-inside:avoid;page-break-inside:avoid}
+@page{size:A4;margin:0}
+@media print{
+ html,body{width:210mm;margin:0;padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .toolbar{display:none!important}
+ .page{width:210mm;height:297mm;min-height:297mm;max-height:297mm;margin:0;box-shadow:none;overflow:hidden;padding:11mm 12mm 9mm}
+}
+@media screen and (max-width:760px){.page{width:100%;height:auto;min-height:297mm;margin:8px auto;padding:18px}.toolbar{margin:8px;flex-direction:column;align-items:flex-start}.identity{grid-template-columns:1fr}.two-col,.two-col.wide{grid-template-columns:1fr}.figure-slot{min-height:45mm}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+ <div><h1>Hojas de trabajo · Recuperación de Geometría 8.º</h1><p>Versión interactiva con construcciones geométricas integradas</p></div>
+ <button onclick="window.print()">Imprimir / Guardar como PDF</button>
+</div>
+
+<!-- HOJA 1 -->
+<section class="page" aria-label="Hoja de trabajo 1, página 1 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 1 · 40 min</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 1. Ángulos, rectas y construcciones</h2><span class="part-tag">Página 1 de 2 · Temas 1 y 2</span></div>
+ <p class="purpose"><strong>Propósito:</strong> reconocer, medir y relacionar ángulos y rectas para determinar medidas desconocidas y realizar construcciones geométricas.</p>
+ <div class="concepts">
+  <h3>Recordatorio de conceptos y propiedades</h3>
+  <div class="concept-grid">
+   <p><strong>Ángulo:</strong> abertura formada por dos semirrectas con origen común, llamado vértice. Se designa con tres letras y el vértice en medio, por ejemplo, ∠ABC.</p>
+   <p><strong>Clasificación:</strong> agudo: menor que 90°; recto: 90°; obtuso: mayor que 90° y menor que 180°; llano: 180°.</p>
+   <p><strong>Congruencia:</strong> dos ángulos son congruentes si tienen la misma medida. Los opuestos por el vértice son congruentes; los adyacentes que forman un ángulo llano suman 180°.</p>
+   <p><strong>Bisectriz:</strong> semirrecta que divide un ángulo en dos ángulos congruentes. Todo punto de ella equidista de los lados del ángulo.</p>
+   <p><strong>Rectas:</strong> las paralelas no se cortan; las perpendiculares se cortan formando cuatro ángulos rectos.</p>
+   <p><strong>Paralelismo y transversal:</strong> correspondientes y alternos son congruentes; los conjugados internos suman 180°.</p>
+   <p><strong>Mediatriz:</strong> recta perpendicular a un segmento que pasa por su punto medio. Sus puntos equidistan de los extremos.</p>
+   <p><strong>Distancia:</strong> de un punto a una recta y entre dos paralelas se mide mediante un segmento perpendicular.</p>
+  </div>
+ </div>
+
+ <section class="activity no-break">
+  <div class="activity-head"><h3>Actividad 1. Reconocimiento, medición y bisectriz</h3><span class="minutes">8 minutos</span></div>
+  <div class="two-col">
+   <div class="figure-slot tall">
+     <span class="figure-name">Figura 1</span>
+     <div id="ggb-fig1" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p>Observa el ángulo de la figura y realiza lo siguiente:</p>
+    <ol>
+     <li>Identifica el vértice: <span class="answer-line short"></span>; sus lados: <span class="answer-line medium"></span> y <span class="answer-line medium"></span>.</li>
+     <li>Designa el ángulo con tres letras: <span class="answer-line medium"></span>.</li>
+     <li>Clasifícalo: <span class="answer-line medium"></span>.</li>
+     <li>Mide su abertura con el transportador: <span class="answer-line short"></span>°.</li>
+     <li>Si se traza la bisectriz, ¿cuánto mide cada ángulo resultante? <span class="answer-line short"></span>°.</li>
+    </ol>
+    <p><strong>Recuerda:</strong> la medida de las dos partes debe ser igual a la mitad de la medida del ángulo original.</p>
+   </div>
+  </div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 2. Relaciones angulares entre dos paralelas y una transversal</h3><span class="minutes">12 minutos</span></div>
+  <div class="two-col wide">
+   <div class="figure-slot large">
+     <span class="figure-name">Figura 2</span>
+     <div id="ggb-fig2" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p>Las rectas <strong>m ∥ n</strong> son cortadas por la transversal <strong>t</strong>. Si <strong>∠1 = 115°</strong>, completa la tabla.</p>
+    <table class="response-table">
+     <thead><tr><th>Par de ángulos</th><th>Relación</th><th>Medida solicitada</th></tr></thead>
+     <tbody>
+      <tr><td>∠1 y ∠5</td><td><span class="answer-line medium"></span></td><td>∠5 = <span class="answer-line short"></span>°</td></tr>
+      <tr><td>∠1 y ∠8</td><td><span class="answer-line medium"></span></td><td>∠8 = <span class="answer-line short"></span>°</td></tr>
+      <tr><td>∠3 y ∠6</td><td><span class="answer-line medium"></span></td><td>∠3 = <span class="answer-line short"></span>°</td></tr>
+      <tr><td>∠3 y ∠5</td><td><span class="answer-line medium"></span></td><td>∠3 = <span class="answer-line short"></span>°</td></tr>
+      <tr><td>∠1 y ∠4</td><td><span class="answer-line medium"></span></td><td>∠4 = <span class="answer-line short"></span>°</td></tr>
+      <tr><td>∠1 y ∠2</td><td><span class="answer-line medium"></span></td><td>∠2 = <span class="answer-line short"></span>°</td></tr>
+     </tbody>
+    </table>
+    <p class="note">En la relación ∠3 y ∠5, identifica si son conjugados internos. En ∠1 y ∠2, considera que son adyacentes y forman un ángulo llano.</p>
+   </div>
+  </div>
+  <div class="answer-box short"><p class="box-label">Justifica una de las medidas que calculaste:</p></div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 3. Construcción de un ángulo congruente y su bisectriz</h3><span class="minutes">8 minutos</span></div>
+  <p class="small">Utiliza el ángulo de la <strong>Figura 1</strong> como modelo. Construye un ángulo congruente mediante regla y transportador. Después, construye su bisectriz con regla y compás, marca un punto P sobre ella y dibuja desde P segmentos perpendiculares a cada lado del ángulo.</p>
+  <div class="construction-area small"></div>
+  <p class="small">Medida del ángulo construido: <span class="answer-line short"></span>° &nbsp;&nbsp; Medida de cada parte: <span class="answer-line short"></span>°.</p>
+  <p class="small">Compara las distancias perpendiculares de P a los dos lados: <span class="answer-line medium"></span>.</p>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 1 · Página 1 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<section class="page" aria-label="Hoja de trabajo 1, página 2 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 1 · Continuación</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 1. Construcciones geométricas</h2><span class="part-tag">Página 2 de 2 · Temas 1 y 2</span></div>
+ <p class="purpose">Continúa el trabajo utilizando regla, escuadra y compás. Realiza trazos claros y señala los elementos solicitados.</p>
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 4. Mediatriz y distancias perpendiculares</h3><span class="minutes">12 minutos</span></div>
+  <p class="small"><strong>a) Mediatriz.</strong> Traza un segmento AB de 6 cm. Con regla y compás, construye su mediatriz. Marca un punto P sobre ella y compara las distancias PA y PB.</p>
+  <div class="construction-area medium"></div>
+  <p class="small"><strong>Conclusión:</strong> ¿qué relación existe entre PA y PB? Explica utilizando la propiedad de la mediatriz.</p>
+  <div class="answer-box short"></div>
+  <p class="small" style="margin-top:6px"><strong>b) Distancia de un punto a una recta.</strong> Dibuja una recta r y un punto Q exterior a ella. Desde Q, construye una perpendicular a r. Marca el pie de la perpendicular con H y señala el segmento QH, que representa la distancia de Q a r.</p>
+  <div class="construction-area medium"></div>
+  <p class="small"><strong>c) Distancia entre paralelas.</strong> En otro espacio de trabajo, traza una recta r y una recta s paralela a ella. Representa un segmento perpendicular común a ambas. Explica por qué ese segmento representa la distancia entre las dos rectas.</p>
+  <div class="construction-area small"></div>
+  <div class="answer-box short"><p class="box-label">Explicación:</p></div>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 1 · Página 2 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<!-- HOJA 2 -->
+<section class="page" aria-label="Hoja de trabajo 2, página 1 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 2 · 40 min</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 2. Triángulos, semejanza y Pitágoras</h2><span class="part-tag">Página 1 de 2 · Temas 3 y 8</span></div>
+ <p class="purpose"><strong>Propósito:</strong> utilizar las propiedades de los triángulos, la congruencia y la semejanza para determinar medidas y resolver situaciones geométricas.</p>
+ <div class="concepts">
+  <h3>Recordatorio de conceptos y propiedades</h3>
+  <div class="concept-grid">
+   <p><strong>Elementos:</strong> tres lados, tres vértices y tres ángulos interiores. La base es el lado de referencia y la altura es perpendicular a ella.</p>
+   <p><strong>Clasificación:</strong> por sus lados: equilátero, isósceles y escaleno; por sus ángulos: acutángulo, rectángulo y obtusángulo.</p>
+   <p><strong>Ángulos:</strong> la suma de los interiores es 180°. Un ángulo exterior es igual a la suma de los dos interiores no adyacentes.</p>
+   <p><strong>Congruencia:</strong> misma forma y tamaño. Criterios: LLL, LAL y ALA.</p>
+   <p><strong>Semejanza:</strong> misma forma; ángulos correspondientes congruentes y lados correspondientes proporcionales. Criterios: AA, LAL y LLL.</p>
+   <p><strong>Proporcionalidad:</strong> en triángulos semejantes, los cocientes de lados correspondientes son iguales.</p>
+  </div>
+ </div>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 1. Elementos, clasificación y ángulos</h3><span class="minutes">8 minutos</span></div>
+  <div class="two-col">
+   <div class="figure-slot tall">
+     <span class="figure-name">Figura 3</span>
+     <div id="ggb-fig3" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p>En la figura, AB = AC y el ángulo A mide 40°.</p>
+    <ol>
+     <li>Escribe los vértices: <span class="answer-line medium"></span>.</li>
+     <li>Clasifícalo según sus lados: <span class="answer-line medium"></span> y según sus ángulos: <span class="answer-line medium"></span>.</li>
+     <li>Calcula la medida de cada ángulo de la base: <span class="answer-line short"></span>°.</li>
+     <li>Calcula el ángulo exterior en C: <span class="answer-line short"></span>°.</li>
+     <li>¿Qué representa el segmento trazado desde A perpendicular a BC? <span class="answer-line medium"></span>.</li>
+    </ol>
+   </div>
+  </div>
+  <div class="answer-box short"><p class="box-label">Procedimiento para calcular los ángulos:</p></div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 2. Reconocimiento de criterios de congruencia</h3><span class="minutes">8 minutos</span></div>
+  <p class="small">Escribe el criterio de congruencia que corresponde a cada condición.</p>
+  <table class="response-table">
+   <thead><tr><th>Condiciones conocidas</th><th>Criterio</th></tr></thead>
+   <tbody>
+    <tr><td>Tres pares de lados correspondientes tienen la misma medida.</td><td><span class="answer-line medium"></span></td></tr>
+    <tr><td>Dos pares de lados y el ángulo comprendido entre ellos son congruentes.</td><td><span class="answer-line medium"></span></td></tr>
+    <tr><td>Dos pares de ángulos y el lado comprendido entre ellos son congruentes.</td><td><span class="answer-line medium"></span></td></tr>
+   </tbody>
+  </table>
+  <p class="small"><strong>Aplicación:</strong> dos triángulos son congruentes. Si un lado del primero mide 7 cm, ¿cuánto mide el lado correspondiente del segundo? <span class="answer-line short"></span> cm.</p>
+  <p class="small"><strong>Explica:</strong> ¿qué diferencia existe entre dos triángulos congruentes y dos triángulos semejantes?</p>
+  <div class="answer-box medium"></div>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 2 · Página 1 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<section class="page" aria-label="Hoja de trabajo 2, página 2 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 2 · Continuación</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 2. Aplicación de semejanza y Pitágoras</h2><span class="part-tag">Página 2 de 2 · Temas 3 y 8</span></div>
+ <p class="purpose">Lee los datos de cada situación, identifica la propiedad que corresponde y muestra el procedimiento completo.</p>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 3. Semejanza y proporcionalidad de triángulos</h3><span class="minutes">12 minutos</span></div>
+  <div class="two-col">
+   <div class="figure-slot tall">
+     <span class="figure-name">Figura 4</span>
+     <div id="ggb-fig4" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p>En la figura, D pertenece a AB, E pertenece a BC y <strong>DE ∥ AC</strong>. Se sabe que BD = 3 cm, DA = 2 cm y DE = 6 cm.</p>
+    <ol>
+     <li>¿Por qué los triángulos BDE y BAC son semejantes? <span class="answer-line medium"></span>.</li>
+     <li>¿Qué criterio de semejanza se aplica? <span class="answer-line short"></span>.</li>
+     <li>Calcula la longitud total de AB: <span class="answer-line short"></span> cm.</li>
+     <li>Plantea una proporción entre BD/BA y DE/AC.</li>
+     <li>Calcula la longitud de AC: <span class="answer-line short"></span> cm.</li>
+    </ol>
+   </div>
+  </div>
+  <div class="answer-box tall"><p class="box-label">Proporción, sustitución y procedimiento:</p></div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 4. Aplicación del teorema de Pitágoras</h3><span class="minutes">12 minutos</span></div>
+  <div class="figure-slot medium svg-pythagoras">
+    <span class="figure-name">Figura 5</span>
+    <img src="https://aamador1225-svg.github.io/poligono-pitagoras/figura_5.svg"
+         alt="Figura 5. Representación del teorema de Pitágoras"
+         loading="eager" referrerpolicy="no-referrer">
+  </div>
+  <div class="answer-pair small">
+   <div class="mini-card">
+    <h4>a) Cálculo de un cateto</h4>
+    <p>La hipotenusa mide 13 cm y un cateto mide 5 cm. Calcula el otro cateto.</p>
+    <div class="answer-box medium"><p class="box-label">Procedimiento y respuesta:</p></div>
+   </div>
+   <div class="mini-card">
+    <h4>b) Problema de aplicación</h4>
+    <p>Una escalera de 5 m se apoya en una pared. Su base está a 3 m de la pared. ¿A qué altura llega?</p>
+    <div class="answer-box medium"><p class="box-label">Procedimiento y respuesta:</p></div>
+   </div>
+  </div>
+  <p class="note">En ambos casos, identifica primero la hipotenusa y los catetos. Recuerda que el teorema se aplica únicamente a triángulos rectángulos.</p>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 2 · Página 2 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<!-- HOJA 3 -->
+<section class="page" aria-label="Hoja de trabajo 3, página 1 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 3 · 40 min</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 3. Polígonos, cuadriláteros, círculo y áreas</h2><span class="part-tag">Página 1 de 2 · Temas 4 a 10</span></div>
+ <p class="purpose"><strong>Propósito:</strong> reconocer propiedades de las figuras planas y utilizar fórmulas para calcular ángulos, perímetros y áreas.</p>
+ <div class="concepts">
+  <h3>Recordatorio de conceptos y propiedades</h3>
+  <div class="concept-grid">
+   <p><strong>Cuadrilátero:</strong> polígono de cuatro lados; la suma de sus ángulos interiores es 360°.</p>
+   <p><strong>Paralelogramo:</strong> tiene dos pares de lados paralelos; sus lados y ángulos opuestos son congruentes y sus diagonales se bisecan.</p>
+   <p><strong>Trapecio:</strong> exactamente un par de lados paralelos.</p>
+   <p><strong>Polígono regular:</strong> todos sus lados y ángulos congruentes.</p>
+   <p><strong>Ángulos de un polígono:</strong> S = 180°(n − 2).</p>
+   <p><strong>Perímetro y área regular:</strong> P = n·l; A = (P·a)/2 (a = apotema).</p>
+  </div>
+ </div>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 1. Clasificación y propiedades de cuadriláteros</h3><span class="minutes">6 minutos</span></div>
+  <p class="small">Marca con una X si la propiedad se cumple <strong>siempre</strong> para cada figura.</p>
+  <table class="property-table">
+   <thead><tr><th>Propiedad</th><th>Cuadrado</th><th>Rectángulo</th><th>Rombo</th><th>Romboide</th><th>Trapecio</th><th>Trapezoide</th></tr></thead>
+   <tbody>
+    <tr><td>Tiene dos pares de lados paralelos.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Tiene cuatro lados congruentes.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Tiene cuatro ángulos rectos.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Sus lados opuestos son congruentes.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Sus diagonales se bisecan mutuamente.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>Tiene exactamente un par de lados paralelos.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>No tiene lados paralelos.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+   </tbody>
+  </table>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 2. Propiedades, ángulos y medidas de un polígono regular</h3><span class="minutes">7 minutos</span></div>
+  <div class="two-col">
+   <div class="figure-slot tall">
+     <span class="figure-name">Figura 6</span>
+     <div id="ggb-fig6" class="ggb-square" style="width: 32mm; height: 32mm; flex: 0 0 32mm; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p>El hexágono regular tiene 6 lados de 4 cm y apotema aproximada de 3.46 cm.</p>
+    <ol>
+     <li>Suma de ángulos interiores: <span class="answer-line short"></span>°.</li>
+     <li>Medida de cada ángulo interior: <span class="answer-line short"></span>°.</li>
+     <li>Ángulo central y exterior: <span class="answer-line short"></span>° cada uno.</li>
+     <li>En la figura, identifica la apotema: <span class="answer-line medium"></span>; es perpendicular a un lado.</li>
+     <li>Perímetro: <span class="answer-line short"></span> cm.</li>
+     <li>Área aproximada: <span class="answer-line short"></span> cm².</li>
+    </ol>
+   </div>
+  </div>
+  <div class="answer-box short"><p class="box-label">Explica brevemente por qué el centro de un polígono regular equidista de sus vértices y de sus lados.</p></div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 3. Áreas y perímetros de figuras planas</h3><span class="minutes">5 minutos</span></div>
+  <div class="answer-pair small">
+   <div class="mini-card">
+    <h4>a) Paralelogramo</h4>
+    <p>Base 8 cm, lado 6 cm y altura 5 cm.</p>
+    <p>Área: <span class="answer-line short"></span> cm².</p>
+    <p>Perímetro: <span class="answer-line short"></span> cm.</p>
+   </div>
+   <div class="mini-card">
+    <h4>b) Trapecio</h4>
+    <p>Bases 12 y 6 cm; altura 4 cm; lados no paralelos 5 cm.</p>
+    <p>Área: <span class="answer-line short"></span> cm².</p>
+    <p>Perímetro: <span class="answer-line short"></span> cm.</p>
+   </div>
+  </div>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 3 · Página 1 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<section class="page" aria-label="Hoja de trabajo 3, página 2 de 2">
+ <header class="page-head">
+  <h1 class="school-title">Recuperación de Geometría · 8.º grado</h1>
+  <div class="identity"><div>Nombre: <span class="write-line"></span></div><div>Sesión 3 · Continuación</div><div>Valor: 5%</div></div>
+ </header>
+ <div class="page-title-row"><h2 class="page-title">Hoja de trabajo 3. Circunferencia y aplicación de áreas</h2><span class="part-tag">Página 2 de 2 · Continuación</span></div>
+ <div class="formula-card">
+  <h3>Fórmulas y propiedades para resolver las actividades</h3>
+  <div class="formula-grid">
+   <p><strong>Áreas:</strong> triángulo: A = bh/2; cuadrado: A = l²; rectángulo y paralelogramo: A = bh; trapecio: A = (B+b)h/2; rombo: A = Dd/2.</p>
+   <p><strong>Círculo:</strong> longitud C = 2πr; área A = πr². Diámetro d = 2r. Sector: L = (θ/360°)·2πr; A sector = (θ/360°)·πr².</p>
+   <p><strong>Ángulos:</strong> central = arco; inscrito y tangente-cuerda = mitad del arco.</p>
+   <p>La tangente tiene un solo punto común y es perpendicular al radio.</p>
+  </div>
+ </div>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 4. Elementos y magnitudes de la circunferencia y el círculo</h3><span class="minutes">12 minutos</span></div>
+  <div class="two-col">
+   <div class="figure-slot tall">
+     <span class="figure-name">Figura 7</span>
+     <div id="ggb-fig7" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p><strong>a)</strong> Identifica los elementos señalados:</p>
+    <p>OA: <span class="answer-line short"></span>; AB: <span class="answer-line short"></span>; CD: <span class="answer-line short"></span>.</p>
+    <p>Recta s: <span class="answer-line short"></span>; recta t: <span class="answer-line short"></span>.</p>
+    <p><strong>b)</strong> ¿Cuántos puntos comunes tiene la tangente t con la circunferencia? <span class="answer-line short"></span>.</p>
+    <p>¿Qué ángulo forman OA y t en A? <span class="answer-line short"></span>°.</p>
+    <p><strong>c)</strong> Si el radio mide 4 cm, calcula la longitud de la circunferencia y el área del círculo. (π ≈ 3.14)</p>
+    <p>C = <span class="answer-line short"></span> cm; A = <span class="answer-line short"></span> cm².</p>
+   </div>
+  </div>
+  <div class="two-col" style="margin-top:5px">
+   <div class="figure-slot medium">
+     <span class="figure-name">Figura 8</span>
+     <div id="ggb-fig8" style="width: 100%; flex: 1 1 auto; min-height: 0;"></div>
+   </div>
+   <div class="small">
+    <p><strong>d)</strong> El sector circular tiene radio 6 cm y ángulo central de 60°. Calcula la longitud del arco y el área del sector. (π ≈ 3.14)</p>
+    <p>Longitud del arco: <span class="answer-line short"></span> cm.</p>
+    <p>Área del sector: <span class="answer-line short"></span> cm².</p>
+    <p><strong>e)</strong> Convierte: 60° = <span class="answer-line short"></span> rad; π/4 rad = <span class="answer-line short"></span>°.</p>
+   </div>
+  </div>
+ </section>
+
+ <section class="activity">
+  <div class="activity-head"><h3>Actividad 5. Área de una figura combinada (regiones sombreadas)</h3><span class="minutes">10 minutos</span></div>
+  <p class="small">Observa la <strong>Figura 9</strong>. Utiliza las medidas y relaciones geométricas indicadas en ella para determinar el área de la región sombreada. Antes de calcular, identifica las figuras que componen la región y decide cuáles áreas debes sumar o restar.</p>
+  <div class="two-col wide">
+   <figure class="figure-slot svg-slot">
+    <span class="figure-name">Figura 9</span>
+    <a href="https://aamador1225-svg.github.io/circulo_y_circunferencia/sombreada/Problema%20geom%C3%A9trico%20con%20c%C3%ADrculo%20y%20regiones%20sombreadas.svg" target="_blank" rel="noopener noreferrer" aria-label="Abrir Figura 9 en una pestaña nueva">
+     <img src="https://aamador1225-svg.github.io/circulo_y_circunferencia/sombreada/Problema%20geom%C3%A9trico%20con%20c%C3%ADrculo%20y%20regiones%20sombreadas.svg" alt="Figura 9. Problema geométrico con círculo y regiones sombreadas" loading="eager" referrerpolicy="no-referrer">
+    </a>
+   </figure>
+   <div class="small">
+    <ol>
+     <li>Identifica las figuras geométricas y anota las medidas que se proporcionan.</li>
+     <li>Indica qué áreas debes calcular y cuáles debes sumar o restar.</li>
+     <li>Determina el área total de la región sombreada. Expresa el resultado con la unidad cuadrada correspondiente.</li>
+    </ol>
+    <div class="answer-box large"><p class="box-label">Procedimiento y respuesta:</p></div>
+   </div>
+  </div>
+  <p class="note">No basta con escribir el resultado: muestra las operaciones y explica brevemente la descomposición utilizada. La figura se carga desde un enlace externo; se requiere conexión a internet para visualizarla e imprimirla.</p>
+ </section>
+ <footer class="footer"><span>Hoja de trabajo 3 · Página 2 de 2</span><span>Reforzamiento de Geometría · 2026</span></footer>
+</section>
+
+<!-- SCRIPT CARGADOR DE GEOGEBRA (AL FINAL DEL BODY) -->
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<style>
+  /* Inyección CSS para ocultar el logo de GeoGebra y cualquier botón flotante */
+  .geogebraweb-applet-background, .ggb-logo, .GeoGebraLogo, .btn-reset { display: none !important; }
+</style>
+<script>
+// Construcciones de GeoGebra: puntos, rectas y etiquetas visibles.
+// La escala horizontal y vertical se iguala dinámicamente para evitar que
+// círculos y demás figuras aparezcan deformados por la proporción del contenedor.
+const figures = [
+  {
+    id: "ggb-fig1", coords: [-2, 4, -1, 4], equalScale: true,
+    points: ["A", "O", "B"],
+    cmds: [
+      "O=(0,0)", "A=(3,0)", "B=(-1.5, 3*sqrt(3)/2)",
+      "f=Ray(O,A)", "g=Ray(O,B)", "ang=Angle(A,O,B)",
+      "ShowLabel(ang,false)"
+    ]
+  },
+  {
+    id: "ggb-fig2", coords: [-1, 6, -2, 4], equalScale: true,
+    points: ["P", "Q"], lines: ["m", "n", "t"],
+    cmds: [
+      "m: y=2", "n: y=0", "t: y=-2.1445069205*x+6.289013841",
+      "P=Intersect(m,t)", "Q=Intersect(n,t)",
+      // Numeración coherente con la tabla: 1 y 5 correspondientes;
+      // 1 y 8 alternos externos; 3 y 6 alternos internos;
+      // 3 y 5 conjugados internos; 1 y 4 opuestos por el vértice;
+      // 1 y 2 adyacentes suplementarios.
+      "lab1=Text(\"1\",(2.38,2.52))", "lab2=Text(\"2\",(1.38,2.52))",
+      "lab3=Text(\"3\",(2.38,1.48))", "lab4=Text(\"4\",(1.38,1.48))",
+      "lab5=Text(\"5\",(3.31,0.52))", "lab6=Text(\"6\",(2.31,0.52))",
+      "lab7=Text(\"7\",(3.31,-0.52))", "lab8=Text(\"8\",(2.31,-0.52))"
+    ]
+  },
+  {
+    id: "ggb-fig3", coords: [-3, 4, -1, 4], equalScale: true,
+    points: ["A", "B", "C", "D", "H"],
+    cmds: [
+      "A=(0,2.747477419)", "B=(-1,0)", "C=(1,0)",
+      "tri=Polygon(A,B,C)", "D=(2,0)", "ext=Ray(C,D)",
+      "H=(0,0)", "alt=Segment(A,H)"
+    ]
+  },
+  {
+    id: "ggb-fig4", coords: [-3, 8, -1, 9], equalScale: true,
+    points: ["A", "B", "C", "D", "E"],
+    cmds: [
+      "B=(0,0)", "A=(5,0)", "C=(-1.1,sqrt(62.79))",
+      "tri=Polygon(B,A,C)", "D=(3,0)", "E=(-0.66,0.6*sqrt(62.79))",
+      "de=Segment(D,E)", "ac=Segment(A,C)"
+    ]
+  },
+  {
+    id: "ggb-fig6", coords: [-5, 5, -5, 5], equalScale: true,
+    points: ["O", "A", "B", "C", "D", "E", "F", "M"],
+    cmds: [
+      "O=(0,0)", "A=(4,0)", "B=(2,2*sqrt(3))", "C=(-2,2*sqrt(3))",
+      "D=(-4,0)", "E=(-2,-2*sqrt(3))", "F=(2,-2*sqrt(3))",
+      "hex=Polygon(A,B,C,D,E,F)", "M=(3,sqrt(3))",
+      "apotema=Segment(O,M)", "radio=Segment(O,A)"
+    ]
+  },
+  {
+    id: "ggb-fig7", coords: [-5, 5, -5, 5], equalScale: true, centerX: 0, centerY: 0,
+    points: ["O", "A", "B", "C", "D"], lines: ["s", "t"],
+    cmds: [
+      "O=(0,0)", "circ=Circle(O,4)",
+      "A=(0,-4)", "B=(0,4)", "C=(-2*sqrt(3),2)", "D=(2*sqrt(3),2)",
+      "radio=Segment(O,A)", "diametro=Segment(A,B)", "cuerda=Segment(C,D)",
+      "s=Line(C,D)", "t: y=-4"
+    ]
+  },
+  {
+    id: "ggb-fig8", coords: [-6.5, 6.5, -1.5, 7.5], equalScale: true, centerX: 0, centerY: 3,
+    points: ["O", "A", "B"],
+    cmds: [
+      "O=(0,0)", "A=(6,0)", "B=(3,3*sqrt(3))",
+      "sector=CircularSector(O,A,B)", "arco=CircularArc(O,A,B)",
+      "radio1=Segment(O,A)", "radio2=Segment(O,B)"
+    ]
+  }
+];
+
+function applyVisibleLabels(api, names) {
+  (names || []).forEach(function(name) {
+    if (api.isDefined(name)) {
+      api.setLabelStyle(name, 0); // NAME: muestra solo la letra/nombre.
+      api.setLabelVisible(name, true);
+    }
+  });
+}
+
+function fitCoordinateSystem(api, el, fig) {
+  if (!fig.coords) return;
+  const [xmin, xmax, ymin, ymax] = fig.coords;
+  if (!fig.equalScale) {
+    api.setCoordSystem(xmin, xmax, ymin, ymax);
+    return;
+  }
+  const rect = el.getBoundingClientRect();
+  const aspect = rect.width > 0 && rect.height > 0 ? rect.width / rect.height : 1.35;
+  const ySpan = ymax - ymin;
+  const xSpan = ySpan * aspect;
+  const cx = Number.isFinite(fig.centerX) ? fig.centerX : (xmin + xmax) / 2;
+  const cy = Number.isFinite(fig.centerY) ? fig.centerY : (ymin + ymax) / 2;
+  api.setCoordSystem(cx - xSpan / 2, cx + xSpan / 2, cy - ySpan / 2, cy + ySpan / 2);
+}
+
+window.addEventListener("load", function() {
+  let i = 0;
+  function loadNextApplet() {
+    if (i >= figures.length) return;
+    const fig = figures[i];
+    const el = document.getElementById(fig.id);
+    if (el && window.GGBApplet) {
+      const params = {
+        appName: "classic",
+        perspective: "G",
+        width: Math.max(120, el.clientWidth),
+        height: Math.max(90, el.clientHeight),
+        showToolBar: false,
+        showFullscreenButton: false,
+        showAnimationButton: false,
+        showAlgebraInput: false,
+        showMenuBar: false,
+        showResetIcon: false,
+        showToolBarHelp: false,
+        allowStyleBar: false,
+        enableRightClick: false,
+        enableLabelDrags: false,
+        enableShiftDragZoom: false,
+        useBrowserForJS: false,
+        errorDialogsActive: false,
+        appletOnLoad: function(api) {
+          api.evalCommand('SetPerspective("G")');
+          api.showToolBar(false);
+          api.showMenuBar(false);
+          api.showAlgebraInput(false);
+          api.setAxesVisible(false, false);
+          api.setGridVisible(false);
+          fig.cmds.forEach(function(cmd) { if (cmd) api.evalCommand(cmd); });
+          // Fuerza etiquetas de los puntos y rectas que se usan en los enunciados.
+          applyVisibleLabels(api, fig.points);
+          applyVisibleLabels(api, fig.lines);
+          // Etiquetas de puntos auxiliares de construcción que no deben confundirse
+          // con los puntos que el estudiante tiene que identificar.
+          if (fig.hiddenPoints) {
+            fig.hiddenPoints.forEach(function(name) {
+              if (api.isDefined(name)) api.setLabelVisible(name, false);
+            });
+          }
+          fitCoordinateSystem(api, el, fig);
+          api.setAxesVisible(false, false);
+          api.setGridVisible(false);
+        }
+      };
+      el.style.border = "none";
+      el.style.pointerEvents = "none";
+      const applet = new GGBApplet(params, true);
+      applet.inject(fig.id);
+    }
+    i++;
+    window.setTimeout(loadNextApplet, 350);
+  }
+  loadNextApplet();
+});
+</script>
+</body>
+</html>
